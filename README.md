@@ -16,5 +16,5 @@ please open the command-line and in the client folder enter :"npm install"
 after this, enter the command: "npm start"
 
 
-now you can start browsing on localhost:3000
+now you can start browsing on localhost:3000,
 thanks and have a nice form building :)
