@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 
 public class DataBase {
 
-	private String projectLocation = "C:\\Users\\talaviad\\eclipse-workspace\\";
+	private String projectLocation = "C:\\Users\\talgever\\Desktop\\Tal\\private projects\\";
 	private String url;
 	private static int formsCounter = 0;
 	
@@ -40,12 +40,13 @@ public class DataBase {
                         + "	Submmisions integer\n"
                         + ");";                
                 // create a new table               
-                stmt.execute(sql);   
-                String query = "SELECT MAX(FormId) FROM forms";
-                stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-                rs.next();
-                formsCounter = Integer.parseInt(rs.getString(1));
+                stmt.execute(sql); 
+	            String query = "SELECT MAX(FormId) FROM forms";
+	            stmt = conn.createStatement();
+	            ResultSet rs = stmt.executeQuery(query);    
+	            rs.next();
+	            if (rs.getInt(1)!=0)	            
+	            	formsCounter = Integer.parseInt(rs.getString(1));  
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }            
