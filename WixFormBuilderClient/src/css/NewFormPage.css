@@ -1,0 +1,68 @@
+/*var jumbotron = {width:"100%", height:"80%"};
+var h21 = {textAlign:'center', color:'grey'}
+
+
+var controllabel = {margin: '0px 0px 0px 100px', color:'#008080' }   //class
+var formcontrol = {width:'40%', margin: '0px 0px 0px 100px'}  //class
+
+var h31 = {padding:'0px 0px 0px 10px'};
+var h32 = {padding:'0px 0px 0px 60px'};
+
+
+
+var button = {margin: '0px 0px 0px 180px'};
+var select = {padding:'0px 0x 0x 10x', margin: '0px 0px 0px 70px'}
+let bigLeftDiv = {float:'left', width:'68%', height:'100%'}
+let bigRightDiv = {float:'right', width:'32%', height:'100%', position:'relative', overflow: 'scroll'}
+var leftDiv = { float:'left', width:'50%', height:'100%'}
+var rightDiv = { float:'right', width:'50%', height:'100%'} */
+
+#pageheader {
+    text-align: center;
+}
+
+#jumbotron {
+    width:100%; height:80%;
+}
+#h21 {
+    text-align:center;
+     color:grey;
+}
+.control-label {
+    margin: 0px 0px 0px 100px; color:#008080;
+}
+
+.form-control {
+    width:40%; margin: 0px 0px 0px 100px;
+}
+
+#h31 {
+    padding:0px 0px 0px 10px;
+}
+
+#h32 {
+    padding:0px 0px 0px 60px;
+}
+/* 0px 180px; */
+#button {
+    margin: 0px 0px 0px 180px;
+}
+
+#select {
+    padding:0px 0x 0x 10x; margin: 0px 0px 0px 70px;
+}
+
+#bigLeftDiv {
+    float: left; width:68%; height:100%;
+}
+
+#bigRightDiv {
+    float:right; width:32%; height:100%; position:relative; overflow: scroll;
+}
+
+#leftDiv { 
+    float:left; width:50%; height:100%;
+}
+#rightDiv { 
+    float:right; width:50%; height:100%;
+}
