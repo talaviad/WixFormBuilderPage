@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 
 public class DataBase {
 
-	private String projectLocation = "C:\\Users\\talgever\\Desktop\\Tal\\private projects\\";
+	private String projectLocation = "C:\\Users\\talgever\\Desktop\\Tal\\private projects\\temp\\WixFormBuilderPage-master\\WixFormBuilderPage-master\\";
 	private String url;
 	private static int formsCounter = 0;
 	
@@ -114,7 +114,7 @@ public class DataBase {
                 	JSONObject submmiter = new JSONObject();
                 	String currentUsername = currentTable.replace(formName+"_","");
                 	submmiter.put("username", currentUsername);
-                	query = "SELECT inputname,fieldlabel FROM "+currentTable;
+                	query = "SELECT inputname,fieldlabel FROM "+"["+currentTable+"]";
                 	stmt = conn.createStatement();
                 	rs = stmt.executeQuery(query);
                 	int counter = 1;
@@ -184,7 +184,7 @@ public class DataBase {
              pstmt.setInt(3,0);
              pstmt.executeUpdate();
              Statement stmt = conn.createStatement();
-             String sql = "CREATE TABLE IF NOT EXISTS "+formName+" (\n"
+             String sql = "CREATE TABLE IF NOT EXISTS "+"["+formName+"]"+" (\n"
             		 + "	id integer PRIMARY KEY,\n"
                      + "	fieldlabel text,\n"
                      + "	inputname text,\n"
@@ -192,7 +192,7 @@ public class DataBase {
                      + ");";
              stmt.execute(sql); 
              //insert the new form
-        	 String query2 = "INSERT INTO "+formName+"(id,fieldlabel,inputname,inputtype) VALUES(?,?,?,?)";	 
+        	 String query2 = "INSERT INTO "+"["+formName+"]"+"(id,fieldlabel,inputname,inputtype) VALUES(?,?,?,?)";	 
              for(int i=0;i<array.length();i++) {
             	 JSONObject formItem = array.getJSONObject(i);
             	 PreparedStatement pstmt2 = conn.prepareStatement(query2);
@@ -229,7 +229,7 @@ public class DataBase {
             rs.next();
             String formName = rs.getString("FormName");
             int numOfSubmissions = rs.getInt("Submmisions");
-            String query2 = "CREATE TABLE IF NOT EXISTS "+formName+"_"+userName+" (\n"
+            String query2 = "CREATE TABLE IF NOT EXISTS "+"["+formName+"_"+userName+"]"+" (\n"
            		 + "	id integer PRIMARY KEY,\n"
                     + "	fieldlabel text,\n"
                     + "	inputname text,\n"
@@ -239,7 +239,7 @@ public class DataBase {
             Statement stmt = conn.createStatement();
             stmt.execute(query2);             
             //insert the new form
-       	 	String query3 = "INSERT INTO "+formName+"_"+userName+"(id,fieldlabel,inputname,inputtype) VALUES(?,?,?,?)";	 
+       	 	String query3 = "INSERT INTO "+"["+formName+"_"+userName+"]"+"(id,fieldlabel,inputname,inputtype) VALUES(?,?,?,?)";	 
             for(int i=0;i<array.length();i++) {
 	           	 JSONObject formItem = array.getJSONObject(i);
 	           	 PreparedStatement pstmt2 = conn.prepareStatement(query3);
@@ -282,7 +282,7 @@ public class DataBase {
             ResultSet rs  = pstmt.executeQuery();
             if (rs.next() == true) {
             	String formName = rs.getString("FormName");           
-            	String query2 = "SELECT * FROM "+formName;
+            	String query2 = "SELECT * FROM "+"["+formName+"]";
             	PreparedStatement pstmt2  = conn.prepareStatement(query2);
             	ResultSet rs2  = pstmt2.executeQuery();
             	array = new JSONArray();
